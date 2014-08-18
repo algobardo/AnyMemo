@@ -2,3 +2,6 @@
 	path = src/android
 	url = https://github.com/algobardo/android.testR2E.git
 	branch = master
+[submodule "test/src/com/android"]
+	path = test/src/com/android
+	url = https://github.com/algobardo/android.testR2E.git
