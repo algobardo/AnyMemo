@@ -12,7 +12,7 @@ import android.content.Intent;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
 
-import com.robotium.solo.Solo;
+import android.test.Solo;
 
 public class DetailScreenActivityTest extends ActivityInstrumentationTestCase2<DetailScreen> {
 

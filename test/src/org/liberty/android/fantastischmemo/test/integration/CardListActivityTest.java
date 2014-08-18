@@ -19,7 +19,7 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
 import android.widget.ListView;
 
-import com.robotium.solo.Solo;
+import android.test.Solo;
 
 public class CardListActivityTest extends ActivityInstrumentationTestCase2<CardListActivity> {
 

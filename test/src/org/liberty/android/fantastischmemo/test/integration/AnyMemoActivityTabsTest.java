@@ -6,7 +6,7 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
 import android.view.KeyEvent;
 
-import com.robotium.solo.Solo;
+import android.test.Solo;
 
 public class AnyMemoActivityTabsTest extends ActivityInstrumentationTestCase2<AnyMemo> {
 

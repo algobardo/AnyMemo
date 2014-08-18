@@ -14,7 +14,7 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
 import android.view.View;
 
-import com.robotium.solo.Solo;
+import android.test.Solo;
 
 public class StudyActivityStudyTest extends ActivityInstrumentationTestCase2<StudyActivity> {
 

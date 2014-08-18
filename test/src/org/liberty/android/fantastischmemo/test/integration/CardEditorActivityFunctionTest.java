@@ -15,7 +15,7 @@ import android.test.suitebuilder.annotation.LargeTest;
 import android.view.View;
 import android.widget.EditText;
 
-import com.robotium.solo.Solo;
+import android.test.Solo;
 
 public class CardEditorActivityFunctionTest extends ActivityInstrumentationTestCase2<CardEditor> {
 

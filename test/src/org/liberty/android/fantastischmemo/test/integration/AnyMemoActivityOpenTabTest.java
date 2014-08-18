@@ -6,7 +6,7 @@ import org.liberty.android.fantastischmemo.ui.AnyMemo;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
 
-import com.robotium.solo.Solo;
+import android.test.Solo;
 
 public class AnyMemoActivityOpenTabTest extends ActivityInstrumentationTestCase2<AnyMemo> {
 

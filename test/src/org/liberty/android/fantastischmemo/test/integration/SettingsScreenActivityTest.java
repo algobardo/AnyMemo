@@ -13,7 +13,7 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
 
 import com.google.common.base.Strings;
-import com.robotium.solo.Solo;
+import android.test.Solo;
 
 public class SettingsScreenActivityTest extends ActivityInstrumentationTestCase2<SettingsScreen> {
 
