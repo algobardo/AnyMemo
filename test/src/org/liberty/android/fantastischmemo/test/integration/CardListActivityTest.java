@@ -44,7 +44,7 @@ public class CardListActivityTest extends ActivityInstrumentationTestCase2<CardL
         mActivity = this.getActivity();
 
         solo = new Solo(getInstrumentation(), mActivity);
-        solo.sleep(2000);
+        //solo.sleep(2000);
     }
 
     @LargeTest
@@ -59,7 +59,7 @@ public class CardListActivityTest extends ActivityInstrumentationTestCase2<CardL
         solo.clickLongOnText("tooth");
         solo.clickOnText(solo.getString(R.string.edit_text));
         solo.waitForActivity(CardEditor.class);
-        solo.sleep(2000);
+        //solo.sleep(2000);
         assertTrue(solo.searchText("tooth"));
     }
 
@@ -68,7 +68,7 @@ public class CardListActivityTest extends ActivityInstrumentationTestCase2<CardL
         solo.clickLongOnText("tooth");
         solo.clickOnText(solo.getString(R.string.edit_button_text));
         solo.waitForActivity(PreviewEditActivity.class);
-        solo.sleep(2000);
+        //solo.sleep(2000);
         assertTrue(solo.searchText("tooth"));
     }
 
@@ -77,7 +77,7 @@ public class CardListActivityTest extends ActivityInstrumentationTestCase2<CardL
         solo.clickLongOnText("tooth");
         solo.clickOnText(solo.getString(R.string.detail_menu_text));
         solo.waitForActivity(DetailScreen.class);
-        solo.sleep(2000);
+        //solo.sleep(2000);
         assertTrue(solo.searchText("tooth"));
     }
 
@@ -85,7 +85,7 @@ public class CardListActivityTest extends ActivityInstrumentationTestCase2<CardL
     public void testMarkAsLearned() {
         solo.clickOnText("tooth");
         solo.clickOnText(solo.getString(R.string.mark_as_learned_text));
-        solo.sleep(2000);
+        //solo.sleep(2000);
 
         // asssert db state
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
@@ -105,7 +105,7 @@ public class CardListActivityTest extends ActivityInstrumentationTestCase2<CardL
     public void testMarkAsForgotten() {
         solo.clickOnText("tooth");
         solo.clickOnText(solo.getString(R.string.mark_as_forgotten_text));
-        solo.sleep(2000);
+        //solo.sleep(2000);
 
         // asssert db state
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
@@ -125,10 +125,10 @@ public class CardListActivityTest extends ActivityInstrumentationTestCase2<CardL
     public void testMarkAsNew() {
         solo.clickOnText("tooth");
         solo.clickOnText(solo.getString(R.string.mark_as_forgotten_text));
-        solo.sleep(2000);
+        //solo.sleep(2000);
         solo.clickOnText("tooth");
         solo.clickOnText(solo.getString(R.string.mark_as_new_text));
-        solo.sleep(2000);
+        //solo.sleep(2000);
 
         // asssert db state
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
@@ -148,7 +148,7 @@ public class CardListActivityTest extends ActivityInstrumentationTestCase2<CardL
     public void testMarkAsLearnedForever() {
         solo.clickOnText("tooth");
         solo.clickOnText(solo.getString(R.string.mark_as_learned_forever_text));
-        solo.sleep(2000);
+        //solo.sleep(2000);
 
         // asssert db state
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
@@ -169,13 +169,13 @@ public class CardListActivityTest extends ActivityInstrumentationTestCase2<CardL
         assertTrue(solo.searchText("la dent", true));
 
         solo.clickOnActionBarItem(R.id.show_hide_answers);
-        solo.sleep(500);
+        //solo.sleep(500);
         // Make sure the search come from the top of the list
         solo.scrollListToTop((ListView) solo.getView(R.id.item_list));
         assertFalse(solo.searchText("la dent", true));
 
         solo.clickOnActionBarItem(R.id.show_hide_answers);
-        solo.sleep(500);
+        //solo.sleep(500);
         // Make sure the search come from the top of the list
         solo.scrollListToTop((ListView) solo.getView(R.id.item_list));
         assertTrue(solo.searchText("la dent", true));
@@ -184,7 +184,7 @@ public class CardListActivityTest extends ActivityInstrumentationTestCase2<CardL
     public void tearDown() throws Exception {
         try {
             solo.finishOpenedActivities();
-            solo.sleep(2000);
+            //solo.sleep(2000);
         } catch (Throwable t) {
             t.printStackTrace();
         }

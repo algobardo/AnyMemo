@@ -39,22 +39,22 @@ public class SettingsScreenActivityTest extends ActivityInstrumentationTestCase2
         solo = new Solo(getInstrumentation(), mActivity);
 
         solo.waitForDialogToClose(8000);
-        solo.sleep(600);
+        //solo.sleep(600);
     }
 
     @LargeTest
     public void testSaveFontSize() throws Exception {
         solo.pressSpinnerItem(0 /* Question font size spinner*/ , 4 /* 48 */);
-        solo.sleep(300);
+        //solo.sleep(300);
         solo.pressSpinnerItem(2 /* Answer font size spinner*/ , 6 /* 72 */);
-        solo.sleep(300);
+        //solo.sleep(300);
 
         assertTrue(solo.searchText("48"));
         assertTrue(solo.searchText("72"));
 
-        solo.sleep(500);
+        //solo.sleep(500);
         solo.clickOnActionBarItem(R.id.save);
-        solo.sleep(2000);
+        //solo.sleep(2000);
 
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
         try {
@@ -71,12 +71,12 @@ public class SettingsScreenActivityTest extends ActivityInstrumentationTestCase2
     public void testSaveAlignments() throws Exception {
         // 1st spinner
         solo.pressSpinnerItem(1 /* Question text alignment */ , -1  /* Left */);
-        solo.sleep(300);
+        //solo.sleep(300);
         solo.pressSpinnerItem(3 /* Question text alignment */ , 1  /* Right */);
-        solo.sleep(300);
+        //solo.sleep(300);
 
         solo.clickOnActionBarItem(R.id.save);
-        solo.sleep(2000);
+        //solo.sleep(2000);
 
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
         try {
@@ -93,9 +93,9 @@ public class SettingsScreenActivityTest extends ActivityInstrumentationTestCase2
     public void testSaveCardStyle() throws Exception {
         solo.pressSpinnerItem(4 /* Card style */ , 1  /* Double sided */);
 
-        solo.sleep(500);
+        //solo.sleep(500);
         solo.clickOnActionBarItem(R.id.save);
-        solo.sleep(2000);
+        //solo.sleep(2000);
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
         try {
             SettingDao settingDao = helper.getSettingDao();
@@ -109,10 +109,10 @@ public class SettingsScreenActivityTest extends ActivityInstrumentationTestCase2
     @LargeTest
     public void testSaveDisplayRatio() throws Exception {
         solo.pressSpinnerItem(5 /* Q/A ratio */ , 1  /* 60% */);
-        solo.sleep(500);
+        //solo.sleep(500);
 
         solo.clickOnActionBarItem(R.id.save);
-        solo.sleep(2000);
+        //solo.sleep(2000);
         
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
         try {
@@ -127,13 +127,13 @@ public class SettingsScreenActivityTest extends ActivityInstrumentationTestCase2
     @LargeTest
     public void testTTSAudioLocale() throws Exception {
         solo.pressSpinnerItem(6 /* Question audio spinner */, 3 /* German */);
-        solo.sleep(300);
+        //solo.sleep(300);
 
         solo.pressSpinnerItem(7 /* Answer audio spinner */, 2 /* Italian */);
-        solo.sleep(300);
+        //solo.sleep(300);
 
         solo.clickOnActionBarItem(R.id.save);
-        solo.sleep(2000);
+        //solo.sleep(2000);
 
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
         try {
@@ -154,9 +154,9 @@ public class SettingsScreenActivityTest extends ActivityInstrumentationTestCase2
     public void testDoubleSidedCard() throws Exception {
         solo.pressSpinnerItem(4 /* Card style */ , 1  /* Double sided */);
 
-        solo.sleep(500);
+        //solo.sleep(500);
         solo.clickOnActionBarItem(R.id.save);
-        solo.sleep(2000);
+        //solo.sleep(2000);
 
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
         try {
@@ -172,12 +172,12 @@ public class SettingsScreenActivityTest extends ActivityInstrumentationTestCase2
     @LargeTest
     public void testGoBackWithSettingChangedPressYesButtonShouldSaveSettings() throws Exception {
         solo.pressSpinnerItem(5 /* Q/A ratio */ , 1  /* 60% */);
-        solo.sleep(500);
+        //solo.sleep(500);
         solo.goBack();
 
-        solo.sleep(500);
+        //solo.sleep(500);
         solo.clickOnButton(solo.getString(R.string.yes_text));
-        solo.sleep(2000);
+        //solo.sleep(2000);
   
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
         try {
@@ -192,13 +192,13 @@ public class SettingsScreenActivityTest extends ActivityInstrumentationTestCase2
     @LargeTest
     public void testGoBackWithSettingChangedPressNoButtonShouldNotSaveSettings() throws Exception {
         solo.pressSpinnerItem(5 /* Q/A ratio */ , 1  /* 60% */);
-        solo.sleep(500);
+        //solo.sleep(500);
 
         solo.goBack();
 
-        solo.sleep(500);
+        //solo.sleep(500);
         solo.clickOnButton(solo.getString(R.string.no_text));
-        solo.sleep(2000);
+        //solo.sleep(2000);
 
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
         try {
@@ -213,12 +213,12 @@ public class SettingsScreenActivityTest extends ActivityInstrumentationTestCase2
     @LargeTest
     public void testGoBackWithSettingChangedPressCancelButtonShouldStayInCurrentActivity() throws Exception {
         solo.pressSpinnerItem(5 /* Q/A ratio */ , 1  /* 60% */);
-        solo.sleep(500);
+        //solo.sleep(500);
 
         solo.goBack();
-        solo.sleep(500);
+        //solo.sleep(500);
         solo.clickOnButton(solo.getString(R.string.cancel_text));
-        solo.sleep(2000);
+        //solo.sleep(2000);
  
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
         try {
@@ -236,7 +236,7 @@ public class SettingsScreenActivityTest extends ActivityInstrumentationTestCase2
     @LargeTest
     public void testGoBackWithNoSettingChangedShouldQuit() throws Exception {
         solo.goBack(); 
-        solo.sleep(2000);
+        //solo.sleep(2000);
 
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
         try {
@@ -251,7 +251,7 @@ public class SettingsScreenActivityTest extends ActivityInstrumentationTestCase2
     public void tearDown() throws Exception {
         try {
             solo.finishOpenedActivities();
-            solo.sleep(2000);
+            //solo.sleep(2000);
         } catch (Throwable t) {
             t.printStackTrace();
         }

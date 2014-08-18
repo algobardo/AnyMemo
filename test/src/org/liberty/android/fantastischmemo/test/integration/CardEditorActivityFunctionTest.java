@@ -41,7 +41,7 @@ public class CardEditorActivityFunctionTest extends ActivityInstrumentationTestC
         mActivity = this.getActivity();
         solo = new Solo(getInstrumentation(), mActivity);
         solo.waitForDialogToClose(8000);
-        solo.sleep(500);
+        //solo.sleep(500);
     }
 
 
@@ -51,22 +51,22 @@ public class CardEditorActivityFunctionTest extends ActivityInstrumentationTestC
         solo.clickOnView(categoryButton);
         // First enter and create a category
         solo.waitForText(solo.getString(R.string.category_dialog_title));
-        solo.sleep(300);
+        //solo.sleep(300);
         solo.clearEditText((EditText) solo.getView(R.id.category_dialog_edit));
-        solo.sleep(300);
+        //solo.sleep(300);
         solo.enterText((EditText) solo.getView(R.id.category_dialog_edit), "mycategory");
-        solo.sleep(300);
+        //solo.sleep(300);
         solo.clickOnButton(solo.getString(R.string.new_text));
-        solo.sleep(300);
+        //solo.sleep(300);
         assertTrue(solo.searchText("mycategory"));
         solo.clickOnText(solo.getString(R.string.ok_text));
 
-        solo.sleep(1000);
+        //solo.sleep(1000);
         // Test the UI changed to mycategory as the category edit button
         assertTrue(solo.searchText("mycategory"));
 
         solo.clickOnActionBarItem(R.id.save);
-        solo.sleep(3000);
+        //solo.sleep(3000);
 
         // Assert database state
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
@@ -86,7 +86,7 @@ public class CardEditorActivityFunctionTest extends ActivityInstrumentationTestC
     public void tearDown() throws Exception {
         try {
             solo.finishOpenedActivities();
-            solo.sleep(2000);
+            //solo.sleep(2000);
         } catch (Throwable t) {
             t.printStackTrace();
         }

@@ -150,7 +150,7 @@ public class QuizActivityTest extends ActivityInstrumentationTestCase2<QuizActiv
 
         solo = new Solo(getInstrumentation(), mActivity);
         solo.waitForDialogToClose(8000);
-        solo.sleep(600);
+        //solo.sleep(600);
     }
 
     private void launchQuizByCategory(Category category) {
@@ -163,7 +163,7 @@ public class QuizActivityTest extends ActivityInstrumentationTestCase2<QuizActiv
 
         solo = new Solo(getInstrumentation(), mActivity);
         solo.waitForDialogToClose(8000);
-        solo.sleep(600);
+        //solo.sleep(600);
     }
 
     /*
@@ -198,7 +198,7 @@ public class QuizActivityTest extends ActivityInstrumentationTestCase2<QuizActiv
     public void tearDown() throws Exception {
         try {
             solo.finishOpenedActivities();
-            solo.sleep(2000);
+            //solo.sleep(2000);
         } catch (Throwable t) {
             t.printStackTrace();
         }

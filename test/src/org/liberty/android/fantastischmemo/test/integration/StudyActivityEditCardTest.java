@@ -42,7 +42,7 @@ public class StudyActivityEditCardTest extends ActivityInstrumentationTestCase2<
 
         solo = new Solo(getInstrumentation(), mActivity);
         solo.waitForDialogToClose(8000);
-        solo.sleep(600);
+        //solo.sleep(600);
     }
 
     @LargeTest
@@ -50,17 +50,17 @@ public class StudyActivityEditCardTest extends ActivityInstrumentationTestCase2<
         solo.clickOnActionBarItem(R.id.menu_context_edit);
 
         solo.waitForDialogToClose(3000);
-        solo.sleep(300);
+        //solo.sleep(300);
 
         solo.clearEditText(0);
         solo.enterText(0, "test");
-        solo.sleep(300);
+        //solo.sleep(300);
 
         solo.clickOnActionBarItem(R.id.save);
 
         solo.waitForActivity("StudyActivity");
         solo.waitForDialogToClose(8000);
-        solo.sleep(600);
+        //solo.sleep(600);
 
         // After saving, expect to see the same card
         assertTrue(solo.searchText("test"));
@@ -79,18 +79,18 @@ public class StudyActivityEditCardTest extends ActivityInstrumentationTestCase2<
 
 
         solo.waitForDialogToClose(3000);
-        solo.sleep(300);
+        //solo.sleep(300);
 
         solo.clearEditText(0);
         solo.enterText(0, "test");
 
-        solo.sleep(300);
+        //solo.sleep(300);
 
         solo.clickOnActionBarItem(R.id.save);
 
         solo.waitForActivity("StudyActivity");
         solo.waitForDialogToClose(8000);
-        solo.sleep(600);
+        //solo.sleep(600);
 
         // After saving, expect to see the same card
         assertTrue(solo.searchText("test"));
@@ -99,7 +99,7 @@ public class StudyActivityEditCardTest extends ActivityInstrumentationTestCase2<
     public void tearDown() throws Exception {
         try {
             solo.finishOpenedActivities();
-            solo.sleep(2000);
+            //solo.sleep(2000);
         } catch (Throwable t) {
             t.printStackTrace();
         }

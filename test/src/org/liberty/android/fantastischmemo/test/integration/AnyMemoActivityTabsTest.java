@@ -39,7 +39,7 @@ public class AnyMemoActivityTabsTest extends ActivityInstrumentationTestCase2<An
     public void tearDown() throws Exception {
         try {
             solo.finishOpenedActivities();
-            solo.sleep(2000);
+            //solo.sleep(2000);
         } catch (Throwable t) {
             t.printStackTrace();
         }

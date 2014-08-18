@@ -40,7 +40,7 @@ public class StudyActivityStudyTest extends ActivityInstrumentationTestCase2<Stu
 
         solo = new Solo(getInstrumentation(), mActivity);
         solo.waitForDialogToClose(8000);
-        solo.sleep(600);
+        //solo.sleep(600);
     }
 
     @LargeTest
@@ -76,7 +76,7 @@ public class StudyActivityStudyTest extends ActivityInstrumentationTestCase2<Stu
         solo.clickOnText(solo.getString(R.string.memo_btn3_text));
         solo.goBack();
         AnyMemoExecutor.waitAllTasks();
-        solo.sleep(2000);
+        //solo.sleep(2000);
 
         // asssert db state
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
@@ -122,7 +122,7 @@ public class StudyActivityStudyTest extends ActivityInstrumentationTestCase2<Stu
         solo.goBack();
 
         AnyMemoExecutor.waitAllTasks();
-        solo.sleep(2000);
+        //solo.sleep(2000);
 
         // asssert db state
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
@@ -140,7 +140,7 @@ public class StudyActivityStudyTest extends ActivityInstrumentationTestCase2<Stu
     public void tearDown() throws Exception {
         try {
             solo.finishOpenedActivities();
-            solo.sleep(2000);
+            //solo.sleep(2000);
         } catch (Throwable t) {
             t.printStackTrace();
         }
