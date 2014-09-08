@@ -1,14 +1,18 @@
 buildscript {
     repositories {
+        mavenLocal()
         mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:0.9.+'
+        classpath 'com.crashlytics.examples.gradle:preprocessor:1.0.0'
     }
 }
 
 apply plugin: 'android'
+apply plugin: 'preprocessor'
 
+/* AnyMemo setting, removed for incompatibilities with jacoco */
 sourceCompatibility = 1.6
 targetCompatibility = 1.6
 
@@ -32,6 +36,7 @@ android {
     buildTypes {
         debug {
             versionNameSuffix "-${getBuildString()}"
+            //testCoverageEnabled = true
         }
     }
 
@@ -192,3 +197,25 @@ def getBuildString () {
     def formattedDate = date.format('yyMMdd')
     return "b" + formattedDate
 }
+
+
+/*********************/
+/*** CODE COVERAGE ***/
+/*********************/
+/*
+allprojects {
+    
+    // Avoid VerifyError
+    
+    tasks.withType(JavaCompile) {
+        sourceCompatibility = 1.5
+        targetCompatibility = 1.5
+    }
+}
+
+task jacoco(dependsOn: "createDebugCoverageReport") {
+    group = "Reporting"
+
+    description = "Generate Jacoco coverage reports"
+}
+*/
