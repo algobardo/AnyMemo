@@ -38,10 +38,10 @@ public class DetailScreenActivityTest extends ActivityInstrumentationTestCase2<D
         mActivity = this.getActivity();
         solo = new Solo(getInstrumentation(), mActivity);
         solo.waitForDialogToClose(8000);
-        solo.sleep(300);
+        //solo.sleep(300);
     }
 
-    @LargeTest
+    @android.test.UnstableTest
     public void testDisplayDetailInfo() throws Exception {
         assertTrue(solo.searchText("head"));
         assertTrue(solo.searchText("2.5"));
@@ -49,14 +49,14 @@ public class DetailScreenActivityTest extends ActivityInstrumentationTestCase2<D
 
     @LargeTest
     public void testSaveChanges() throws Exception {
-        solo.sleep(400);
+        //solo.sleep(400);
         solo.clearEditText(1);
         solo.enterText(1, "foot");
 
         solo.clickOnActionBarItem(R.id.save);
 
         solo.clickOnText(solo.getString(R.string.ok_text));
-        solo.sleep(4000);
+        //solo.sleep(4000);
         // asssert db state
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
         try {
@@ -72,7 +72,7 @@ public class DetailScreenActivityTest extends ActivityInstrumentationTestCase2<D
     public void tearDown() throws Exception {
         try {
             solo.finishOpenedActivities();
-            solo.sleep(2000);
+            //solo.sleep(2000);
         } catch (Throwable t) {
             t.printStackTrace();
         }

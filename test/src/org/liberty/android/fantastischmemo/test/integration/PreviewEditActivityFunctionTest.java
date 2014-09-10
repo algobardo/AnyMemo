@@ -33,7 +33,7 @@ public class PreviewEditActivityFunctionTest extends ActivityInstrumentationTest
 
         solo = new Solo(getInstrumentation(), mActivity);
         solo.waitForDialogToClose(8000);
-        solo.sleep(600);
+        //solo.sleep(600);
     }
 
 
@@ -41,24 +41,24 @@ public class PreviewEditActivityFunctionTest extends ActivityInstrumentationTest
     public void testSearchTextForward() throws Exception {
         solo.clickOnActionBarItem(R.id.action_search);
         solo.enterText(0, "ac");
-        solo.sleep(300);
+        //solo.sleep(300);
         solo.sendKey(Solo.ENTER);
-        solo.sleep(1000);
+        //solo.sleep(1000);
         assertTrue(solo.searchText("face"));
 
         // Search again should return next result
         solo.sendKey(Solo.ENTER);
-        solo.sleep(1000);
+        //solo.sleep(1000);
         assertTrue(solo.searchText("stomach"));
 
         // Search again should return next result
         solo.sendKey(Solo.ENTER);
-        solo.sleep(1000);
+        //solo.sleep(1000);
         assertTrue(solo.searchText("back"));
 
         // Search again should return the first result in the beginning
         solo.sendKey(Solo.ENTER);
-        solo.sleep(1000);
+        //solo.sleep(1000);
         assertTrue(solo.searchText("face"));
     }
 
@@ -68,7 +68,7 @@ public class PreviewEditActivityFunctionTest extends ActivityInstrumentationTest
         solo.enterText(0, "#15");
         solo.sendKey(Solo.ENTER);
 
-        solo.sleep(1000);
+        //solo.sleep(1000);
         assertTrue(solo.searchText("arm"));
     }
 
@@ -78,7 +78,7 @@ public class PreviewEditActivityFunctionTest extends ActivityInstrumentationTest
         solo.enterText(0, "#70");
         solo.sendKey(Solo.ENTER);
 
-        solo.sleep(1000);
+        //solo.sleep(1000);
         // Stay the same card
         assertTrue(solo.searchText("head"));
     }
@@ -86,7 +86,7 @@ public class PreviewEditActivityFunctionTest extends ActivityInstrumentationTest
     public void tearDown() throws Exception {
         try {
             solo.finishOpenedActivities();
-            solo.sleep(2000);
+            //solo.sleep(2000);
         } catch (Throwable t) {
             t.printStackTrace();
         }

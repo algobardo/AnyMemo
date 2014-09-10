@@ -29,7 +29,7 @@ public class AnyMemoActivityOpenTabTest extends ActivityInstrumentationTestCase2
         mActivity = this.getActivity();
         solo = new Solo(getInstrumentation(), mActivity);
 
-        solo.sleep(1000);
+        //solo.sleep(1000);
         //solo.clickOnText(solo.getString(R.string.open_tab_text));
 
         solo.clickOnText("Download");
@@ -45,7 +45,7 @@ public class AnyMemoActivityOpenTabTest extends ActivityInstrumentationTestCase2
     public void tearDown() throws Exception {
         try {
             solo.finishOpenedActivities();
-            solo.sleep(1000);
+            //solo.sleep(1000);
         } catch (Throwable t) {
             t.printStackTrace();
         }

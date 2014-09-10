@@ -33,7 +33,7 @@ public class PreviewEditActivityMainButtonTest extends ActivityInstrumentationTe
 
         solo = new Solo(getInstrumentation(), mActivity);
         solo.waitForDialogToClose(8000);
-        solo.sleep(600);
+        //solo.sleep(600);
     }
 
 
@@ -44,32 +44,32 @@ public class PreviewEditActivityMainButtonTest extends ActivityInstrumentationTe
 
         // 2nd card
         solo.clickOnText(solo.getString(R.string.add_screen_next));
-        solo.sleep(300);
+        //solo.sleep(300);
         assertTrue(solo.searchText("hair"));
 
         // 3rd card
         solo.clickOnText(solo.getString(R.string.add_screen_next));
-        solo.sleep(600);
+        //solo.sleep(600);
         assertTrue(solo.searchText("face"));
 
         // 2nd card
         solo.clickOnText(solo.getString(R.string.previous_text_short));
-        solo.sleep(600);
+        //solo.sleep(600);
         assertTrue(solo.searchText("hair"));
 
         // 1st card
         solo.clickOnText(solo.getString(R.string.previous_text_short));
-        solo.sleep(600);
+        //solo.sleep(600);
         assertTrue(solo.searchText("head"));
 
         // last (28th) card
         solo.clickOnText(solo.getString(R.string.previous_text_short));
-        solo.sleep(600);
+        //solo.sleep(600);
         assertTrue(solo.searchText("toe"));
 
         // 1st card
         solo.clickOnText(solo.getString(R.string.add_screen_next));
-        solo.sleep(600);
+        //solo.sleep(600);
         assertTrue(solo.searchText("head"));
     }
 
@@ -79,7 +79,7 @@ public class PreviewEditActivityMainButtonTest extends ActivityInstrumentationTe
         solo.clickOnText(solo.getString(R.string.add_screen_next));
         solo.clickOnText(solo.getString(R.string.edit_text));
         solo.waitForActivity("CardEditor");
-        solo.sleep(4000);
+        //solo.sleep(4000);
 
         // Make sure we are editing the 2nd card
         assertTrue(solo.searchText("hair"));
@@ -87,14 +87,14 @@ public class PreviewEditActivityMainButtonTest extends ActivityInstrumentationTe
         solo.enterText(0, "myhair");
 
         solo.clickOnActionBarItem(R.id.save);
-        solo.sleep(4000);
+        //solo.sleep(4000);
         assertTrue(solo.searchText("myhair"));
     }
 
     public void tearDown() throws Exception {
         try {
             solo.finishOpenedActivities();
-            solo.sleep(2000);
+            //solo.sleep(2000);
         } catch (Throwable t) {
             t.printStackTrace();
         }

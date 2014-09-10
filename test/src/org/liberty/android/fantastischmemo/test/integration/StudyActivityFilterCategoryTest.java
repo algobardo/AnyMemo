@@ -42,7 +42,7 @@ public class StudyActivityFilterCategoryTest extends ActivityInstrumentationTest
 
         solo = new Solo(getInstrumentation(), mActivity);
         solo.waitForDialogToClose(8000);
-        solo.sleep(600);
+        //solo.sleep(600);
     }
 
     // Move 2, 5, 8 to category: cat1
@@ -66,7 +66,7 @@ public class StudyActivityFilterCategoryTest extends ActivityInstrumentationTest
         AnyMemoDBOpenHelperManager.releaseHelper(helper);
     }
 
-    @LargeTest
+    @android.test.UnstableTest
     public void testFilterCategory() {
         // Filter category menu item
         solo.clickOnActionBarItem(R.id.menu_memo_category);
@@ -75,7 +75,7 @@ public class StudyActivityFilterCategoryTest extends ActivityInstrumentationTest
         solo.clickOnText(solo.getString(R.string.ok_text));
         // Wait refersh the activity
         AnyMemoExecutor.waitAllTasks();
-        solo.sleep(2000);
+        //solo.sleep(2000);
 
         assertTrue(solo.searchText("hair"));
 
@@ -94,7 +94,7 @@ public class StudyActivityFilterCategoryTest extends ActivityInstrumentationTest
     public void tearDown() throws Exception {
         try {
             solo.finishOpenedActivities();
-            solo.sleep(2000);
+            //solo.sleep(2000);
         } catch (Throwable t) {
             t.printStackTrace();
         }

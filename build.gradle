@@ -143,7 +143,7 @@ dependencies {
         exclude module: 'mockito-core'
     }
     compile 'org.mockito:mockito-all:1.9.5'
-    compile 'com.jayway.android.robotium:robotium-solo:5.1'
+    compile 'com.jayway.android.robotium:robotium-solo:5.2.1'
 }
 
 android.applicationVariants.all { variant ->

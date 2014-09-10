@@ -39,10 +39,10 @@ public class StudyActivityFunctionTest extends ActivityInstrumentationTestCase2<
 
         solo = new Solo(getInstrumentation(), mActivity);
         solo.waitForDialogToClose(8000);
-        solo.sleep(600);
+        //solo.sleep(600);
     }
 
-    @LargeTest
+    @android.test.UnstableTest
     public void testUndo() throws Exception {
 
 
@@ -59,20 +59,20 @@ public class StudyActivityFunctionTest extends ActivityInstrumentationTestCase2<
         solo.clickOnText(solo.getString(R.string.undo_text));
 
         AnyMemoExecutor.waitAllTasks();
-        solo.sleep(600);
+        //solo.sleep(600);
 
         // 2nd card should be shown
         assertTrue(solo.searchText("hair"));
 
         // Fail 2nd card
         solo.clickOnText(solo.getString(R.string.memo_show_answer));
-        solo.sleep(600);
+        //solo.sleep(600);
         solo.clickOnText(solo.getString(R.string.memo_btn0_text));
 
         solo.goBack();
 
         AnyMemoExecutor.waitAllTasks();
-        solo.sleep(600);
+        //solo.sleep(600);
 
         // asssert db state
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
@@ -87,14 +87,14 @@ public class StudyActivityFunctionTest extends ActivityInstrumentationTestCase2<
         }
     }
 
-    @LargeTest
+    @android.test.UnstableTest
     public void testDeleteCard() throws Exception {
         solo.clickOnActionBarItem(R.id.menu_context_delete);
         solo.clickOnText(solo.getString(R.string.ok_text));
         solo.goBack();
 
         AnyMemoExecutor.waitAllTasks();
-        solo.sleep(2000);
+        //solo.sleep(2000);
 
         // asssert db state
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
@@ -110,20 +110,20 @@ public class StudyActivityFunctionTest extends ActivityInstrumentationTestCase2<
 
     }
 
-    @LargeTest
+    @android.test.UnstableTest
     public void testMarkCardLearnedForever() throws Exception {
         solo.clickOnActionBarItem(R.id.menu_mark_as_learned_forever);
 
         solo.clickOnText(solo.getString(R.string.ok_text));
 
         AnyMemoExecutor.waitAllTasks();
-        solo.sleep(2000);
+        //solo.sleep(2000);
 
         // The card should not be shown
         assertFalse(solo.searchText("head"));
         solo.goBack();
 
-        solo.sleep(2000);
+        //solo.sleep(2000);
         // asssert db state
         AnyMemoDBOpenHelper helper = AnyMemoDBOpenHelperManager.getHelper(mActivity, TestHelper.SAMPLE_DB_PATH);
         try {
@@ -137,32 +137,32 @@ public class StudyActivityFunctionTest extends ActivityInstrumentationTestCase2<
         }
     }
 
-    @LargeTest
+    @android.test.UnstableTest
     public void testGotoPreviewScreen() {
         solo.clickOnActionBarItem(R.id.menu_context_gotoprev);
         assertTrue(solo.waitForActivity("PreviewEditActivity"));
-        solo.sleep(1000);
+        //solo.sleep(1000);
     }
 
-    @LargeTest
+    @android.test.UnstableTest
     public void testGotoDetailScreen() {
         // The way to click menu item in action bar
         solo.clickOnActionBarItem(R.id.menudetail);
         assertTrue(solo.waitForActivity("DetailScreen"));
-        solo.sleep(1000);
+        //solo.sleep(1000);
     }
 
-    @LargeTest
+    @android.test.UnstableTest
     public void testGotoSettingsScreen() {
         solo.clickOnActionBarItem(R.id.menusettings);
         assertTrue(solo.waitForActivity("SettingsScreen"));
-        solo.sleep(1000);
+        //solo.sleep(1000);
     }
 
     public void tearDown() throws Exception {
         try {
             solo.finishOpenedActivities();
-            solo.sleep(2000);
+            //solo.sleep(2000);
         } catch (Throwable t) {
             t.printStackTrace();
         }
