@@ -36,7 +36,7 @@ android {
     buildTypes {
         debug {
             versionNameSuffix "-${getBuildString()}"
-            //testCoverageEnabled = true
+            testCoverageEnabled = true
         }
     }
 
@@ -202,7 +202,7 @@ def getBuildString () {
 /*********************/
 /*** CODE COVERAGE ***/
 /*********************/
-/*
+
 allprojects {
     
     // Avoid VerifyError
@@ -218,4 +218,3 @@ task jacoco(dependsOn: "createDebugCoverageReport") {
 
     description = "Generate Jacoco coverage reports"
 }
-*/
