@@ -43,7 +43,7 @@ public class StudyActivityStudyTest extends ActivityInstrumentationTestCase2<Stu
         //solo.sleep(600);
     }
 
-    @LargeTest
+    @android.test.UnstableTest
     public void testGrade() throws Exception {
         // Success on card #1
         assertTrue(solo.searchText("head"));
@@ -93,7 +93,7 @@ public class StudyActivityStudyTest extends ActivityInstrumentationTestCase2<Stu
 
     // Test forget 1st card and 3rd and learn 9 new card
     // the 1st and 3rd card should reappear.
-    @LargeTest
+    @android.test.UnstableTest
     public void testFailedCardRepeat() throws Exception {
         for (int i = 0; i < 10; i++) {
             solo.clickOnText(solo.getString(R.string.memo_show_answer));
