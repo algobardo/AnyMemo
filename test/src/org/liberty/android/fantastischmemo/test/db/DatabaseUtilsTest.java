@@ -34,7 +34,7 @@ public class DatabaseUtilsTest extends AbstractExistingDBTest {
         assertNotNull(setting);
     }
 
-    @SmallTest
+    @android.test.UnstableTest
     @SuppressWarnings("unused")
     public void testMergeDatabase() throws Exception {
         // Create testing DB to merge
