@@ -62,7 +62,7 @@ public class ImportMergingTest extends AndroidTestCase {
         newDbCardList.add(c2);
     }
 
-    @SmallTest
+    @android.test.UnstableTest
     public void testMergeCsvIntoDb() throws Exception {
         srcFilePath = AMEnv.DEFAULT_ROOT_PATH + "/" + "csv-test.csv";
         destFilePath = AMEnv.DEFAULT_ROOT_PATH + "/" + "csv-test.db";
@@ -117,7 +117,7 @@ public class ImportMergingTest extends AndroidTestCase {
         }
     }
 
-    @SmallTest
+    @android.test.UnstableTest
     public void testMergeQATxtIntoDb() throws Exception {
         srcFilePath = AMEnv.DEFAULT_ROOT_PATH + "/" + "qa-text-test.txt";
         destFilePath = AMEnv.DEFAULT_ROOT_PATH + "/" + "qa-text-test.db";
