@@ -93,7 +93,6 @@ public class StudyActivityStudyTest extends ActivityInstrumentationTestCase2<Stu
 
     // Test forget 1st card and 3rd and learn 9 new card
     // the 1st and 3rd card should reappear.
-    @android.test.UnstableTest
     public void testFailedCardRepeat() throws Exception {
         for (int i = 0; i < 10; i++) {
             solo.clickOnText(solo.getString(R.string.memo_show_answer));
