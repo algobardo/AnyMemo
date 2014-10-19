@@ -208,8 +208,8 @@ allprojects {
     // Avoid VerifyError
     
     tasks.withType(JavaCompile) {
-        sourceCompatibility = 1.5
-        targetCompatibility = 1.5
+        //sourceCompatibility = 1.5
+        //targetCompatibility = 1.5
     }
 }
 
