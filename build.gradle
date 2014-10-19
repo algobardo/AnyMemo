@@ -13,8 +13,8 @@ apply plugin: 'android'
 apply plugin: 'preprocessor'
 
 /* AnyMemo setting, removed for incompatibilities with jacoco */
-sourceCompatibility = 1.6
-targetCompatibility = 1.6
+//sourceCompatibility = 1.6
+//targetCompatibility = 1.6
 
 repositories {
     mavenCentral()
@@ -208,8 +208,8 @@ allprojects {
     // Avoid VerifyError
     
     tasks.withType(JavaCompile) {
-        //sourceCompatibility = 1.5
-        //targetCompatibility = 1.5
+        sourceCompatibility = 1.6
+        targetCompatibility = 1.6
     }
 }
 
