@@ -14,7 +14,7 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
 import android.view.View;
 
-import android.test.Solo;
+import dk.au.cs.thor.robotium2espresso.Solo;
 
 public class StudyActivityStudyTest extends ActivityInstrumentationTestCase2<StudyActivity> {
 
@@ -43,7 +43,7 @@ public class StudyActivityStudyTest extends ActivityInstrumentationTestCase2<Stu
         //solo.sleep(600);
     }
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testGrade() throws Exception {
         // Success on card #1
         assertTrue(solo.searchText("head"));
@@ -93,7 +93,7 @@ public class StudyActivityStudyTest extends ActivityInstrumentationTestCase2<Stu
 
     // Test forget 1st card and 3rd and learn 9 new card
     // the 1st and 3rd card should reappear.
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testFailedCardRepeat() throws Exception {
         for (int i = 0; i < 10; i++) {
             solo.clickOnText(solo.getString(R.string.memo_show_answer));

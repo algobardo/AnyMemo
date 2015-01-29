@@ -9,7 +9,7 @@ import org.liberty.android.fantastischmemo.ui.AnyMemo;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
 
-import android.test.Solo;
+import dk.au.cs.thor.robotium2espresso.Solo;
 
 public class AnyMemoActivityRecentTabTest extends ActivityInstrumentationTestCase2<AnyMemo> {
 
@@ -36,7 +36,7 @@ public class AnyMemoActivityRecentTabTest extends ActivityInstrumentationTestCas
     }
 
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testActionListStudy() {
         // The study action item
         solo.clickOnView(solo.getView(R.id.study));
@@ -46,7 +46,7 @@ public class AnyMemoActivityRecentTabTest extends ActivityInstrumentationTestCas
         //solo.sleep(600);
     }
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testActionListPrevEdit() {
         // The edit action item
         solo.clickOnView(solo.getView(R.id.edit));
@@ -56,7 +56,7 @@ public class AnyMemoActivityRecentTabTest extends ActivityInstrumentationTestCas
         //solo.sleep(600);
     }
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testActionListCardList() {
         // The list action item
         solo.clickOnView(solo.getView(R.id.list));
@@ -67,7 +67,7 @@ public class AnyMemoActivityRecentTabTest extends ActivityInstrumentationTestCas
     }
 
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testActionListSettings() {
         // The settings action item
         solo.clickOnView(solo.getView(R.id.settings));
@@ -77,7 +77,7 @@ public class AnyMemoActivityRecentTabTest extends ActivityInstrumentationTestCas
         //solo.sleep(600);
     }
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testActionListDelete() {
         // The delete action item
         solo.clickOnView(solo.getView(R.id.delete));

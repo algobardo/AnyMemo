@@ -1,3 +1,0 @@
-[submodule "test/src/android"]
-	path = test/src/android
-	url = https://github.com/algobardo/android.testR2E.git

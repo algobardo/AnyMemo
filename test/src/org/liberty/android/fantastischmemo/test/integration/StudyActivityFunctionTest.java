@@ -13,7 +13,7 @@ import android.content.Intent;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
 
-import android.test.Solo;
+import dk.au.cs.thor.robotium2espresso.Solo;
 
 public class StudyActivityFunctionTest extends ActivityInstrumentationTestCase2<StudyActivity> {
 
@@ -42,7 +42,7 @@ public class StudyActivityFunctionTest extends ActivityInstrumentationTestCase2<
         //solo.sleep(600);
     }
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testUndo() throws Exception {
 
 
@@ -87,7 +87,7 @@ public class StudyActivityFunctionTest extends ActivityInstrumentationTestCase2<
         }
     }
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testDeleteCard() throws Exception {
         solo.clickOnActionBarItem(R.id.menu_context_delete);
         solo.clickOnText(solo.getString(R.string.ok_text));
@@ -110,7 +110,7 @@ public class StudyActivityFunctionTest extends ActivityInstrumentationTestCase2<
 
     }
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testMarkCardLearnedForever() throws Exception {
         solo.clickOnActionBarItem(R.id.menu_mark_as_learned_forever);
 
@@ -137,14 +137,14 @@ public class StudyActivityFunctionTest extends ActivityInstrumentationTestCase2<
         }
     }
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testGotoPreviewScreen() {
         solo.clickOnActionBarItem(R.id.menu_context_gotoprev);
         assertTrue(solo.waitForActivity("PreviewEditActivity"));
         //solo.sleep(1000);
     }
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testGotoDetailScreen() {
         // The way to click menu item in action bar
         solo.clickOnActionBarItem(R.id.menudetail);
@@ -152,7 +152,7 @@ public class StudyActivityFunctionTest extends ActivityInstrumentationTestCase2<
         //solo.sleep(1000);
     }
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testGotoSettingsScreen() {
         solo.clickOnActionBarItem(R.id.menusettings);
         assertTrue(solo.waitForActivity("SettingsScreen"));

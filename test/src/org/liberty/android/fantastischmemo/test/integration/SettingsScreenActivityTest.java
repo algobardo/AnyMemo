@@ -13,7 +13,7 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
 
 import com.google.common.base.Strings;
-import android.test.Solo;
+import dk.au.cs.thor.robotium2espresso.Solo;
 
 public class SettingsScreenActivityTest extends ActivityInstrumentationTestCase2<SettingsScreen> {
 
@@ -233,7 +233,7 @@ public class SettingsScreenActivityTest extends ActivityInstrumentationTestCase2
         solo.assertCurrentActivity("Stay", SettingsScreen.class);
     }
     
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testGoBackWithNoSettingChangedShouldQuit() throws Exception {
         solo.goBack(); 
         //solo.sleep(2000);

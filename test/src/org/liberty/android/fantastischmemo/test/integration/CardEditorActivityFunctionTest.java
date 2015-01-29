@@ -15,7 +15,7 @@ import android.test.suitebuilder.annotation.LargeTest;
 import android.view.View;
 import android.widget.EditText;
 
-import android.test.Solo;
+import dk.au.cs.thor.robotium2espresso.Solo;
 
 public class CardEditorActivityFunctionTest extends ActivityInstrumentationTestCase2<CardEditor> {
 
@@ -45,7 +45,7 @@ public class CardEditorActivityFunctionTest extends ActivityInstrumentationTestC
     }
 
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testNewCatetory() throws Exception {
         View categoryButton = mActivity.findViewById(R.id.edit_dialog_category_button);
         solo.clickOnView(categoryButton);

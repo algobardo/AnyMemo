@@ -19,7 +19,7 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
 import android.widget.ListView;
 
-import android.test.Solo;
+import dk.au.cs.thor.robotium2espresso.Solo;
 
 public class CardListActivityTest extends ActivityInstrumentationTestCase2<CardListActivity> {
 
@@ -47,7 +47,7 @@ public class CardListActivityTest extends ActivityInstrumentationTestCase2<CardL
         //solo.sleep(2000);
     }
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testListCards() throws Exception {
         assertTrue(solo.searchText("head"));
         assertTrue(solo.searchText("arm"));
@@ -164,7 +164,7 @@ public class CardListActivityTest extends ActivityInstrumentationTestCase2<CardL
         assertTrue(solo.searchText("tooth"));
     }
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testShowHideAnswer() throws Exception {
         assertTrue(solo.searchText("la dent", true));
 

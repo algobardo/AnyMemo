@@ -15,7 +15,7 @@ import android.content.Intent;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
 
-import android.test.Solo;
+import dk.au.cs.thor.robotium2espresso.Solo;
 
 public class StudyActivityFilterCategoryTest extends ActivityInstrumentationTestCase2<StudyActivity> {
 
@@ -66,7 +66,7 @@ public class StudyActivityFilterCategoryTest extends ActivityInstrumentationTest
         AnyMemoDBOpenHelperManager.releaseHelper(helper);
     }
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testFilterCategory() {
         // Filter category menu item
         solo.clickOnActionBarItem(R.id.menu_memo_category);

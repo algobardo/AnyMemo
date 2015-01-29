@@ -12,7 +12,7 @@ import android.content.Intent;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
 
-import android.test.Solo;
+import dk.au.cs.thor.robotium2espresso.Solo;
 
 public class DetailScreenActivityTest extends ActivityInstrumentationTestCase2<DetailScreen> {
 
@@ -41,7 +41,7 @@ public class DetailScreenActivityTest extends ActivityInstrumentationTestCase2<D
         //solo.sleep(300);
     }
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     public void testDisplayDetailInfo() throws Exception {
         assertTrue(solo.searchText("head"));
         assertTrue(solo.searchText("2.5"));

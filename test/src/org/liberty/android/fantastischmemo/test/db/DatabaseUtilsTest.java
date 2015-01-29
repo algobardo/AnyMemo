@@ -34,7 +34,7 @@ public class DatabaseUtilsTest extends AbstractExistingDBTest {
         assertNotNull(setting);
     }
 
-    @android.test.UnstableTest
+    @dk.au.cs.thor.robotium2espresso.UnstableTest
     @SuppressWarnings("unused")
     public void testMergeDatabase() throws Exception {
         // Create testing DB to merge
