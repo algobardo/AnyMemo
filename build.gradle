@@ -5,12 +5,12 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:0.9.+'
-        classpath 'com.crashlytics.examples.gradle:preprocessor:1.0.0'
+        classpath 'dk.au.cs.thor.gradle:instrumentation:1.0.0'
     }
 }
 
 apply plugin: 'android'
-apply plugin: 'preprocessor'
+apply plugin: 'instrumentation'
 
 /* AnyMemo setting, removed for incompatibilities with jacoco */
 //sourceCompatibility = 1.6
